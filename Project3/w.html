@@ -1,0 +1,64 @@
+<%@ page language="java" pageEncoding="utf-8" import="java.util.*"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<form action="new_file.jsp">
+<%
+ArrayList<String> arrayList = (ArrayList<String>)session.getAttribute("arrayList");
+	String[] book = request.getParameterValues("book");
+	if(book != null){
+		
+		
+		for(String b:book){	
+			arrayList.add(b);
+		}
+		out.println("<table>");
+		for(int i = 0; i < l.size(); i++){
+			out.println("<tr>");
+			out.println("<td>");
+			out.println(l.get(i));
+%>
+<input type="hidden" name="hid" value="<%= l.get(i) %>" />
+<input id = "delete" type="button" name="delete" value="delete" onclick="del(<%= i%>)" />
+<%
+			
+			out.println("</td>");
+			out.println("</tr>");
+		}
+		out.println("</table>");
+	}
+%>
+
+<%
+String[] hid = request.getParameterValues("hid");
+ArrayList<String> arrayList = new ArrayList<String>();
+if(hid != null){
+for(String h:hid){	
+			arrayList.add(h);
+		}
+
+	String[] del = request.getParameterValues("delete");
+	if(del != null){
+		for(String d:del){
+			arrayList.remove(Integer.parseInt(d));
+	}
+}
+	for(int k = 0; k < arrayList.size(); k++){
+		out.println(arrayList.get(k));
+	
+%>
+<input type="submit" name="delete" value="delete" />
+<%
+			out.println("<br>");
+		}
+		}
+%>
+</form>
+<script>
+	function del(a){
+		console.log(a);
+		document.getElementById("delete").value = a;
+	}
+</script>
+
+

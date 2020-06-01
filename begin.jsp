@@ -36,7 +36,14 @@ for(int i=0;i<list.size();i++)
 <% 
   }
 %>
-
+<form action="Servlet" method="post">
+action:<p><select size="1" name="action" >
+<option selectes value="sx">刷新</option>
+<option selectes value="fh">返回</option>
+</select></p>
+<input type="submit" name="submit" value="提交">
+<input type="reset" name="reset" value="重置"><br>
+</form>
 </table>
 </body>
 </html>

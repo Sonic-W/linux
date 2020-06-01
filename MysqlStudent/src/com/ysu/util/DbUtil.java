@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 public class DbUtil implements DataSource{
 	private String dbUrl = "jdbc:mysql://localhost:3306/student?useUnicode=true&characterEncoding=UTF-8";
 	private String dbUser = "root";
-	private String dbPassword = "19980927";
+	private String dbPassword = "root";
 	private String dbDriver="com.mysql.jdbc.Driver";
 	
 	private static DbUtil dbUtil = new DbUtil();

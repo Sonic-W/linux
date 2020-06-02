@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here2</title>
+<title>Insert title here1</title>
 </head>
 <body>
 <% //StudentDao rd=new StudentDao();
@@ -16,7 +16,7 @@
   ArrayList<Student> list = new StudentDao().getallstudent();
 %>
 
-<table border="1">
+<center><table border="1">
 <tr>
 <th>Id</th>
 <th>名字</th>
@@ -36,14 +36,27 @@ for(int i=0;i<list.size();i++)
 <% 
   }
 %>
+</table>
+
 <form action="Servlet" method="post">
-action:<p><select size="1" name="action" >
+<%//action:<p><select size="1" name="action" >%>
+action:<select size="1" name="action">
+<option selectes value="nul"></option>
 <option selectes value="sx">刷新</option>
 <option selectes value="fh">返回</option>
+<option selectes value="ins">增加</option>
+<option selectes value="del">删除</option>
+<option selectes value="cha">修改</option>
+<option selectes value="fin">查找</option>
 </select></p>
+输入action id:
+<input type="text" name="str" size="12"><br>
 <input type="submit" name="submit" value="提交">
 <input type="reset" name="reset" value="重置"><br>
 </form>
-</table>
+
+
+</center>
+
 </body>
 </html>

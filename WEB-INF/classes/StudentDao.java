@@ -63,19 +63,18 @@ public class StudentDao {
         }
             return list;
     }   
-    public static Student findo(String userName)
+    public static Student findo(String id)
     {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         Student stu =new Student();
-             stu=null;
         try {
              conn= DBUtil.getConnection();
            // String sql="select * form Student where userName=?;";
             //stmt=conn.prepareStatement(sql);
-            stmt=conn.prepareStatement("select * from student where userName=?");
-            stmt.setString(1,userName);
+            stmt=conn.prepareStatement("select * from student where id=?");
+            stmt.setString(1,id);
             rs=stmt.executeQuery();
             if(rs.next())
             {
@@ -224,16 +223,26 @@ public class StudentDao {
             }
         }
         }
-    public static void updatee(Student stu){
-
+    public static void updatee(String id,String userName,String xb,String mima,String idd){
+System.out.println(id);
+System.out.println(userName);
+System.out.println(xb);
+System.out.println(mima);
+System.out.println(idd);
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
            conn= DBUtil.getConnection();
-           String sql = "update student set id='"+stu.getId()+"',userName='"+stu.getUserName()+"',xb='"+stu.getXb()+"',mima='"+stu.getMima()+"'";
+           String sql = "update student set id=?,userName=?,xb=?,mima=?" + " where id=?";
+          
            stmt=conn.prepareStatement(sql);
            //stmt=conn.preparedStatement("update Student set id ='"+stu.getId()+"',userName='"+stu.getUserName()+"',xb='"+stu.getXb()+"',mima='"+stu.getMima()+"'");
+           stmt.setString(1,id);
+           stmt.setString(2,userName);
+           stmt.setString(3,xb);
+           stmt.setString(4,mima);
+           stmt.setString(5,idd);
            stmt.executeUpdate();
             
         } catch (Exception e) {

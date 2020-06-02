@@ -5,7 +5,7 @@
 		String password=request.getParameter("password");
 
 		String driverName="com.mysql.jdbc.Driver";//驱动程序名
-		String userName="root";//数据库用户名
+		String userName="root";//数据库用户名2
 		String userPasswd="root";//密码
 
 		String dbName="student2";//数据库名

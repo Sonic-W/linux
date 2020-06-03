@@ -13,9 +13,6 @@
 
  Date: 01/06/2020 16:40:30
 */
-create database student3;
-use student3
-
 SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 

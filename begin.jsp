@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here22</title>
+<title>Insert title here6.4</title>
 </head>
 <body>
 <% //StudentDao rd=new StudentDao();
